@@ -115,7 +115,7 @@ sealed abstract class JsonObject extends Serializable {
 /**
  * Constructors, type class instances, and other utilities for [[JsonObject]].
  */
-final object JsonObject {
+final object JsonObject extends Serializable {
   /**
    * Construct a [[JsonObject]] from the given key-value pairs.
    */

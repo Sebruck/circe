@@ -5,7 +5,7 @@ import shapeless.{ LabelledGeneric, Lazy }
 
 abstract class DerivedObjectEncoder[A] extends ObjectEncoder[A]
 
-final object DerivedObjectEncoder {
+final object DerivedObjectEncoder extends Serializable {
   implicit def deriveEncoder[A, R](implicit
     gen: LabelledGeneric.Aux[A, R],
     encode: Lazy[ReprObjectEncoder[R]]

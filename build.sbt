@@ -179,14 +179,8 @@ lazy val circeCrossModules = Seq[(Project, Project)](
 )
 
 lazy val circeJsModules = Seq[Project](scalajs)
-
-lazy val circeJvmModules = Seq[Project](
-  jawn,
-  streaming
-)
-
+lazy val circeJvmModules = Seq[Project](jawn, streaming)
 lazy val circeDocsModules = Seq[Project](docs)
-
 lazy val circeUtilModules = Seq[Project](hygiene, benchmark)
 
 def jvm8Only(projects: Project*): Set[Project] = sys.props("java.specification.version") match {

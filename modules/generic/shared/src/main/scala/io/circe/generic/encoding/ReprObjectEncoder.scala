@@ -11,6 +11,6 @@ import scala.language.experimental.macros
  */
 abstract class ReprObjectEncoder[A] extends ObjectEncoder[A]
 
-final object ReprObjectEncoder {
+final object ReprObjectEncoder extends Serializable {
   implicit def deriveReprObjectEncoder[R]: ReprObjectEncoder[R] = macro Deriver.deriveEncoder[R]
 }

@@ -15,7 +15,7 @@ import shapeless.labelled.{ field, FieldType }
  */
 abstract class ReprDecoder[A] extends Decoder[A]
 
-final object ReprDecoder {
+final object ReprDecoder extends Serializable {
   implicit def deriveReprDecoder[R]: ReprDecoder[R] = macro Deriver.deriveDecoder[R]
 
   val hnilReprDecoder: ReprDecoder[HNil] = new ReprDecoder[HNil] {

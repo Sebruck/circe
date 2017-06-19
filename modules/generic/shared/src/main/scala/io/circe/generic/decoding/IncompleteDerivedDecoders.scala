@@ -6,7 +6,7 @@ import shapeless.{ HList, LabelledGeneric }
 import shapeless.ops.function.FnFromProduct
 import shapeless.ops.record.RemoveAll
 
-private[circe] trait IncompleteDerivedDecoders {
+private[circe] trait IncompleteDerivedDecoders extends Serializable {
   implicit final def decodeIncompleteCaseClass[F, P <: HList, A, T <: HList, R <: HList](implicit
     ffp: FnFromProduct.Aux[P => A, F],
     gen: LabelledGeneric.Aux[A, T],
